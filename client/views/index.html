@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Peer Angular Challenge</title>
+    <!-- Styles-->
+    <link rel ="stylesheet" href = "/vendors/bootstrap.min.css">
+    <link rel ="stylesheet" href="/assets/styles/style.css">
+    <!-- Scripts-->
+    <script type="text/javascript" src = "/vendors/angular.min.js"></script>
+    <script type="text/javascript"  src = "/assets/scripts/app.min.js"></script>
+</head>
+<body>
+    <h1>Team Zeta</h1>
+    <div class = "container" ng-controller="ZetaController">
+        <button ng-click="sortByName()">Sort by Name</button>
+        <button ng-click="sortByLocation()">Sort by Location</button>
+        <button ng-click="sortByNumber()">Sort by Favorite Number</button>
+        <div ng-repeat="person in nameArray | orderBy: sortFilter">
+            <zeta-info info = "person"></zeta-info>
+        </div>
+    </div>
+</body>
+</html>
